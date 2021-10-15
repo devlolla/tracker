@@ -1,16 +1,23 @@
+import { CardContainer, Tag } from './styles'
 import { Button } from "../../../../components/atoms/Button"
 
 export const Card = ({ title, category, price }) => {
   return (
-    <article className="bg-white p-4 shadow-md h-40 relative flex justify-between flex-col gap-2">
-      <Button className="absolute top-0 right-0" variant="ghost">
-        Excluir
-      </Button>
-      <h2 className="font-bold text-xl "> {title} </h2>
-      <p className="px-4 h-8 flex items-center justify-center bg-purple-100 text-purple-900 rounded-full self-start ">
-        {category}
-      </p>
+    <CardContainer>
+      <h2 className="font-bold text-xl ">
+        {title}
+      </h2>
+      <Tag> {category} </Tag>
       <p className="font-medium ">{price}</p>
-    </article>
+      <footer className="w-full flex justify-between">
+        <Button variant="ghost">
+          Editar
+        </Button>
+        <Button variant="ghost">
+          Excluir
+        </Button>
+      </footer>
+    </CardContainer>
   )
 }
+
